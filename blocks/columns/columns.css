@@ -19,6 +19,57 @@
   display: block;
 }
 
+/* portrait variant: image beside a column of prose */
+.columns.portrait > div > .columns-img-col img {
+  border-radius: 4px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.columns.portrait h1 {
+  margin: 0 0 24px;
+}
+
+.columns.portrait p {
+  margin: 0 0 20px;
+  font-size: var(--body-font-size-m);
+  line-height: 1.7;
+}
+
+.columns.portrait p:last-child {
+  margin-bottom: 0;
+}
+
+/* promo variant: copy beside a strip of small images, used inside a dark section.
+   On mobile the copy spans the full width above a three-across image strip. */
+.columns.promo > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.columns.promo > div > div:first-child {
+  order: 0;
+  grid-column: 1 / -1;
+  margin-bottom: 14px;
+}
+
+.columns.promo > div > .columns-img-col {
+  order: 1;
+}
+
+.columns.promo h2 {
+  margin: 0 0 16px;
+  font-size: var(--heading-font-size-l);
+  line-height: 1.1;
+}
+
+.columns.promo > div > .columns-img-col img {
+  border-radius: var(--image-radius);
+  aspect-ratio: 18 / 22;
+  object-fit: cover;
+}
+
 @media (width >= 900px) {
   .columns > div {
     align-items: center;
@@ -29,5 +80,22 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+
+  .columns.portrait > div {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .columns.promo > div {
+    grid-template-columns: minmax(0, 1fr) repeat(3, minmax(0, 180px));
+    align-items: start;
+  }
+
+  .columns.promo > div > div:first-child {
+    grid-column: auto;
+    margin: 0 34px 0 0;
   }
 }

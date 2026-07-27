@@ -12,61 +12,93 @@
 
 :root {
   /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --background-color: #fbfbf9;
+  --light-color: #f2f2ee;
+  --dark-color: #274451;
+  --text-color: #1b1e1c;
+  --link-color: #3e5c6b;
+  --link-hover-color: #274451;
+
+  /* editorial palette */
+  --accent-color: #3e5c6b;
+  --muted-color: #44483f;
+  --muted-2-color: #5c6058;
+
+  /* #9a9e97 from the design is 2.6:1 on the page background and fails WCAG AA,
+     so text uses a darkened 4.75:1 grey and the original is kept for hairlines only */
+  --faint-color: #6e7268;
+  --faint-decorative-color: #9a9e97;
+  --hairline-color: #e4e5e1;
+  --border-strong-color: #c9cac4;
+
+  /* inverse palette, used by the dark section variant */
+  --inverse-background-color: #1b1e1c;
+  --inverse-text-color: #fbfbf9;
+  --inverse-accent-color: #8fa6b4;
+  --inverse-muted-color: #b9bcb6;
+  --inverse-border-color: #48504a;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: hanken-grotesk, hanken-grotesk-fallback, sans-serif;
+  --heading-font-family: archivo, archivo-fallback, sans-serif;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  --body-font-size-m: 16px;
+  --body-font-size-s: 15px;
+  --body-font-size-xs: 13px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  --heading-font-size-xxl: 40px;
+  --heading-font-size-xl: 34px;
+  --heading-font-size-l: 28px;
+  --heading-font-size-m: 24px;
+  --heading-font-size-s: 20px;
+  --heading-font-size-xs: 17px;
+
+  /* layout */
+  --content-width: 1200px;
+  --image-radius: 3px;
 
   /* nav height */
   --nav-height: 64px;
 }
 
-/* fallback fonts */
+/* fallback fonts, metrics measured against Arial */
 @font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
+  font-family: archivo-fallback;
+  size-adjust: 115.162%;
+  ascent-override: 76.24%;
+  descent-override: 18.24%;
+  line-gap-override: 0%;
   src: local('Arial');
 }
 
 @font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
+  font-family: hanken-grotesk-fallback;
+  size-adjust: 112.058%;
+  ascent-override: 89.24%;
+  descent-override: 27.04%;
+  line-gap-override: 0%;
   src: local('Arial');
 }
 
 @media (width >= 900px) {
   :root {
     /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
+    --body-font-size-m: 17px;
+    --body-font-size-s: 15px;
+    --body-font-size-xs: 13px;
 
     /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
+    --heading-font-size-xxl: 60px;
+    --heading-font-size-xl: 46px;
+    --heading-font-size-l: 32px;
+    --heading-font-size-m: 24px;
+    --heading-font-size-s: 22px;
     --heading-font-size-xs: 18px;
+
+    /* nav height */
+    --nav-height: 84px;
   }
 }
 
@@ -77,7 +109,7 @@ body {
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 body.appear {
@@ -85,7 +117,7 @@ body.appear {
 }
 
 header {
-  height: var(--nav-height);
+  min-height: var(--nav-height);
 }
 
 header .header,
@@ -108,15 +140,16 @@ h6 {
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
+h1 { font-size: var(--heading-font-size-xl); }
+h2 { font-size: var(--heading-font-size-m); }
+h3 { font-size: var(--heading-font-size-s); }
 h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
+h5 { font-size: var(--heading-font-size-xs); }
 h6 { font-size: var(--heading-font-size-xs); }
 
 p,
@@ -129,6 +162,17 @@ blockquote {
   margin-bottom: 0.25em;
 }
 
+/* the small tracked-out label above a heading, applied by decorateEyebrows */
+.eyebrow {
+  margin-bottom: 1em;
+  color: var(--accent-color);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
 code,
 pre {
   font-size: var(--body-font-size-s);
@@ -136,7 +180,6 @@ pre {
 
 pre {
   padding: 16px;
-  border-radius: 8px;
   background-color: var(--light-color);
   overflow-x: auto;
   white-space: pre;
@@ -153,6 +196,11 @@ button {
   font: inherit;
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
 /* links */
 a:any-link {
   color: var(--link-color);
@@ -162,12 +210,18 @@ a:any-link {
 
 a:hover {
   color: var(--link-hover-color);
+}
+
+/* underline links in running prose only, so nav, teasers and buttons stay clean */
+main p a:hover,
+main li a:hover {
   text-decoration: underline;
 }
 
 /* buttons */
 p.button-wrapper {
-  margin: 12px 0;
+  display: inline-block;
+  margin: 12px 10px 12px 0;
 }
 
 a.button:any-link,
@@ -178,13 +232,16 @@ button.button {
   justify-content: center;
   max-width: 100%;
   margin: 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font: inherit;
-  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 13px 22px;
+  font-family: var(--body-font-family);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   line-height: 1.25;
   text-decoration: none;
+  text-transform: uppercase;
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -210,7 +267,7 @@ button.button.primary:hover,
 button.button.primary:focus-visible {
   border-color: var(--dark-color);
   background-color: var(--dark-color);
-  color: var(--light-color);
+  color: var(--background-color);
 }
 
 a.button.primary[aria-disabled="true"],
@@ -220,13 +277,13 @@ button.button.primary:disabled,
 button.button.primary:disabled:hover,
 button.button.primary:disabled:focus-visible {
   background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
+  border-color: var(--border-strong-color);
+  color: var(--faint-color);
 }
 
 a.button.secondary,
 button.button.secondary {
-  border-color: var(--text-color);
+  border-color: var(--border-strong-color);
   background-color: transparent;
   color: var(--text-color);
 }
@@ -235,9 +292,9 @@ a.button.secondary:hover,
 a.button.secondary:focus-visible,
 button.button.secondary:hover,
 button.button.secondary:focus-visible {
-  border-color: var(--dark-color);
+  border-color: var(--text-color);
   background-color: var(--light-color);
-  color: var(--dark-color);
+  color: var(--text-color);
 }
 
 a.button.secondary[aria-disabled="true"],
@@ -247,15 +304,15 @@ button.button.secondary:disabled,
 button.button.secondary:disabled:hover,
 button.button.secondary:disabled:focus-visible {
   background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
+  border-color: var(--border-strong-color);
+  color: var(--faint-color);
 }
 
 /* high-impact call-to-action */
 a.button.accent,
 button.button.accent {
-  border-color: var(--link-color);
-  background-color: var(--link-color);
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
   color: var(--background-color);
 }
 
@@ -274,8 +331,8 @@ button.button.accent:disabled,
 button.button.accent:disabled:hover,
 button.button.accent:disabled:focus-visible {
   background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
+  border-color: var(--border-strong-color);
+  color: var(--faint-color);
 }
 
 main img {
@@ -295,24 +352,31 @@ main img {
   width: 100%;
 }
 
-/* sections */
+/* sections — the design separates bands with hairlines and padding, not margins */
 main > .section {
-  margin: 40px 0;
+  margin: 0;
+  padding: 48px 0;
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: var(--content-width);
   margin: auto;
   padding: 0 24px;
 }
 
-main > .section:first-of-type {
-  margin-top: 0;
+@media (width >= 900px) {
+  main > .section {
+    padding: 64px 0;
+  }
+
+  main > .section > div {
+    padding: 0 40px;
+  }
 }
 
-@media (width >= 900px) {
+@media (width >= 1200px) {
   main > .section > div {
-    padding: 0 32px;
+    padding: 0 64px;
   }
 }
 
@@ -320,6 +384,91 @@ main > .section:first-of-type {
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
+}
+
+/* a full-bleed hairline above the section, the design's main separator */
+main .section.rule-top {
+  border-top: 1px solid var(--hairline-color);
+}
+
+/* full-bleed dark band */
+main .section.dark {
+  background-color: var(--inverse-background-color);
+  color: var(--inverse-text-color);
+}
+
+main .section.dark .eyebrow {
+  color: var(--inverse-accent-color);
+}
+
+main .section.dark p {
+  color: var(--inverse-muted-color);
+}
+
+main .section.dark a.button.secondary {
+  border-color: var(--inverse-border-color);
+  color: var(--inverse-text-color);
+}
+
+main .section.dark a.button.secondary:hover,
+main .section.dark a.button.secondary:focus-visible {
+  border-color: var(--inverse-text-color);
+  background-color: transparent;
+  color: var(--inverse-text-color);
+}
+
+/* narrow measures */
+main .section.narrow > div {
+  max-width: 1000px;
+}
+
+main .section.prose > div {
+  max-width: 760px;
+}
+
+/* article body copy — scoped to default content so blocks in the section keep their
+   own typography */
+main .section.prose .default-content-wrapper p {
+  margin: 0 0 24px;
+  color: #2c302b;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+main .section.prose .default-content-wrapper picture img {
+  width: 100%;
+  margin: 8px 0 40px;
+  border-radius: 4px;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+
+/* heading on the left, "view all" link on the right */
+main .section.split-head > .default-content-wrapper:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+main .section.split-head > .default-content-wrapper:first-child > * {
   margin: 0;
-  padding: 40px 0;
+}
+
+main .section.split-head > .default-content-wrapper:first-child > p a:any-link {
+  color: var(--faint-color);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+main .section.split-head > .default-content-wrapper:first-child > p a::after {
+  content: " →";
+}
+
+main .section.split-head > .default-content-wrapper:first-child > p a:hover {
+  color: var(--text-color);
+  text-decoration: none;
 }

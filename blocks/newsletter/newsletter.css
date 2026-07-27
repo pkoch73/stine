@@ -1,0 +1,91 @@
+.newsletter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 48px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newsletter .newsletter-copy {
+  margin: 0;
+  color: var(--muted-2-color);
+  font-size: var(--body-font-size-s);
+}
+
+.newsletter .newsletter-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.newsletter .newsletter-field {
+  display: flex;
+  border: 1px solid var(--border-strong-color);
+}
+
+.newsletter .newsletter-field:focus-within {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.newsletter input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  padding: 12px 18px;
+  background: transparent;
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.newsletter input:focus-visible {
+  outline: none;
+}
+
+.newsletter input::placeholder {
+  color: var(--faint-color);
+}
+
+.newsletter .newsletter-submit {
+  border: 0;
+  border-radius: 0;
+  padding: 12px 20px;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.newsletter .newsletter-submit:hover {
+  background-color: var(--dark-color);
+}
+
+.newsletter .newsletter-submit:disabled {
+  background-color: var(--faint-color);
+  cursor: not-allowed;
+}
+
+.newsletter .newsletter-status {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--accent-color);
+  font-size: var(--body-font-size-s);
+}
+
+.newsletter .newsletter-status:empty {
+  display: none;
+}
+
+@media (width < 600px) {
+  .newsletter .newsletter-form {
+    width: 100%;
+  }
+}

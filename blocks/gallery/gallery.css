@@ -1,0 +1,38 @@
+.gallery .gallery-list {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery .gallery-list > li {
+  margin: 0;
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  border-radius: var(--image-radius);
+  aspect-ratio: 6 / 5;
+  object-fit: cover;
+}
+
+.gallery figcaption {
+  margin-top: 8px;
+  color: var(--faint-color);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (width >= 900px) {
+  .gallery .gallery-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

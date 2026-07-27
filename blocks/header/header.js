@@ -122,6 +122,7 @@ export default async function decorate(block) {
   block.textContent = '';
   const nav = document.createElement('nav');
   nav.id = 'nav';
+  nav.setAttribute('aria-label', 'Main');
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
   const classes = ['brand', 'sections', 'tools'];
@@ -134,11 +135,20 @@ export default async function decorate(block) {
   const brandLink = navBrand.querySelector('.button');
   if (brandLink) {
     brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
+    // decorateButtons in scripts.js emits `button-wrapper`, not the boilerplate's
+    // `button-container`, and the wrapper is absent when the brand is not buttonized
+    const brandWrapper = brandLink.closest('.button-wrapper');
+    if (brandWrapper) brandWrapper.className = '';
   }
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
+    // mark the link for the current page so it can be styled and announced
+    navSections.querySelectorAll('a[href]').forEach((a) => {
+      if (new URL(a.href, window.location).pathname === window.location.pathname) {
+        a.setAttribute('aria-current', 'page');
+      }
+    });
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
       navSection.addEventListener('click', () => {
