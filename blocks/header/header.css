@@ -48,6 +48,9 @@ header .nav-brand {
   font-weight: 600;
   letter-spacing: 0.18em;
   line-height: 1;
+
+  /* the wordmark is always set uppercase, however the author types it */
+  text-transform: uppercase;
 }
 
 header nav .nav-brand img {

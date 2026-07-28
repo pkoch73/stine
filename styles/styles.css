@@ -464,9 +464,8 @@ main .section.split-head > .default-content-wrapper:first-child > p a:any-link {
   text-transform: uppercase;
 }
 
-main .section.split-head > .default-content-wrapper:first-child > p a::after {
-  content: " →";
-}
+/* the arrow is authored as part of the link text, so "View all →" reads the same
+   in the document as it does on the page */
 
 main .section.split-head > .default-content-wrapper:first-child > p a:hover {
   color: var(--text-color);
