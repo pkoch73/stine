@@ -1,0 +1,177 @@
+.posts .posts-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline-color);
+  list-style: none;
+}
+
+.posts .posts-item {
+  position: relative;
+  margin: 0;
+}
+
+.posts .posts-category {
+  margin: 0 0 14px;
+  color: var(--accent-color);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.posts .posts-title {
+  margin: 0 0 12px;
+  font-size: var(--heading-font-size-s);
+  line-height: 1.2;
+}
+
+.posts .posts-title a {
+  color: inherit;
+}
+
+/* stretch the title link over the whole teaser without widening its accessible name */
+.posts .posts-title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.posts .posts-title a:hover {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.posts .posts-item:focus-within {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+.posts .posts-dek {
+  margin: 0 0 16px;
+  color: var(--muted-2-color);
+  font-size: var(--body-font-size-s);
+  line-height: 1.6;
+}
+
+.posts .posts-meta {
+  margin: 0;
+  color: var(--faint-color);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* default: teaser grid */
+.posts:not(.list) .posts-item {
+  padding: 34px 0;
+  border-bottom: 1px solid var(--hairline-color);
+}
+
+/* list variant: one row per post */
+.posts.list .posts-item {
+  display: grid;
+  gap: 4px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--hairline-color);
+}
+
+.posts.list .posts-title {
+  font-size: var(--heading-font-size-s);
+}
+
+.posts.list .posts-dek {
+  margin: 0;
+}
+
+/* filter chips */
+.posts .posts-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.posts .posts-chip {
+  --chip-color: var(--text-color);
+
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--chip-color) 40%, transparent);
+  border-radius: 0;
+  padding: 9px 16px;
+  background: transparent;
+  color: var(--chip-color);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.posts .posts-chip:hover {
+  border-color: var(--chip-color);
+}
+
+.posts .posts-chip[aria-pressed="true"] {
+  border-color: var(--chip-color);
+  background-color: var(--chip-color);
+  color: var(--background-color);
+}
+
+.posts .posts-chip[data-category="sagas-study"] { --chip-color: #3e5c6b; }
+.posts .posts-chip[data-category="knit-cloth"] { --chip-color: #7c5a3e; }
+.posts .posts-chip[data-category="trails-snow"] { --chip-color: #3e6b5c; }
+.posts .posts-chip[data-category="wardrobe"] { --chip-color: #6b4a3e; }
+.posts .posts-chip[data-category="clay-paint"] { --chip-color: #6b5c3e; }
+.posts .posts-chip[data-category="oslo"] { --chip-color: #5c3e6b; }
+
+.posts .posts-filter-status {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--faint-color);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (width >= 600px) {
+  .posts:not(.list) .posts-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .posts.list .posts-item {
+    grid-template-columns: 140px 1fr auto;
+    gap: 28px;
+    align-items: baseline;
+  }
+
+  .posts:not(.list) .posts-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .posts:not(.list) .posts-item {
+    padding: 34px 28px;
+    border-right: 1px solid var(--hairline-color);
+    border-bottom: 0;
+  }
+
+  .posts:not(.list) .posts-item:first-child {
+    padding-left: 0;
+  }
+
+  .posts:not(.list) .posts-item:last-child {
+    border-right: 0;
+  }
+
+  .posts.list .posts-category {
+    margin: 0;
+  }
+
+  .posts.list .posts-meta {
+    white-space: nowrap;
+  }
+}

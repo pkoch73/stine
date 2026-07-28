@@ -1,20 +1,45 @@
 footer {
-  background-color: var(--light-color);
+  border-top: 1px solid var(--hairline-color);
+  background-color: var(--background-color);
+  color: var(--faint-color);
   font-size: var(--body-font-size-xs);
 }
 
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  max-width: var(--content-width);
+  padding: 34px 24px;
+}
+
+/* the fragment's section wrapper holds the copyright and the place line */
+footer .footer .default-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 footer .footer p {
   margin: 0;
 }
 
+footer .footer a:any-link {
+  color: inherit;
+}
+
+footer .footer a:hover {
+  color: var(--text-color);
+}
+
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 34px 40px;
+  }
+}
+
+@media (width >= 1200px) {
+  footer .footer > div {
+    padding: 34px 64px;
   }
 }

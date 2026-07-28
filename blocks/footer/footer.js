@@ -16,5 +16,15 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  // keep the copyright line authored: replace a `{year}` token with the current year
+  const walker = document.createTreeWalker(footer, NodeFilter.SHOW_TEXT);
+  const year = `${new Date().getFullYear()}`;
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    if (node.nodeValue.includes('{year}')) {
+      node.nodeValue = node.nodeValue.replaceAll('{year}', year);
+    }
+  }
+
   block.append(footer);
 }

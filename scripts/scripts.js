@@ -10,6 +10,9 @@ import {
   loadSections,
   loadCSS,
   buildBlock,
+  readBlockConfig,
+  toClassName,
+  toCamelCase,
 } from './aem.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
@@ -143,6 +146,60 @@ function decorateButtons(main) {
 }
 
 /**
+ * Applies authored Section Metadata to its section.
+ *
+ * `decorateSections()` in aem.js does not read section metadata, so without this the
+ * authored `Style: ...` variants never reach the DOM and the metadata table would be
+ * picked up by `decorateBlocks()` as a block of its own. Must run after
+ * `decorateSections` (it needs the wrappers) and before `decorateBlocks`.
+ * @param {Element} main The main container element
+ */
+function decorateSectionMetadata(main) {
+  main.querySelectorAll(':scope > .section > div > .section-metadata').forEach((meta) => {
+    const section = meta.closest('.section');
+    const config = readBlockConfig(meta);
+    Object.keys(config).forEach((key) => {
+      if (key === 'style') {
+        const styles = [config.style].flat().join(',').split(',');
+        styles.map((style) => toClassName(style.trim())).filter((style) => style)
+          .forEach((style) => section.classList.add(style));
+      } else {
+        section.dataset[toCamelCase(key)] = config[key];
+      }
+    });
+    meta.parentElement.remove();
+  });
+}
+
+/**
+ * Marks up the small label that sits above a heading throughout the site.
+ *
+ * Authors write it either as the first paragraph of a block cell or content wrapper, or
+ * as an `h6` — the latter is converted to a paragraph so it cannot break the document
+ * outline by preceding an `h1`.
+ * @param {Element} main The main container element
+ */
+function decorateEyebrows(main) {
+  main.querySelectorAll('h6').forEach((h6) => {
+    if (!h6.nextElementSibling?.matches('h1, h2, h3')) return;
+    const p = document.createElement('p');
+    p.className = 'eyebrow';
+    p.append(...h6.childNodes);
+    h6.replaceWith(p);
+  });
+
+  main.querySelectorAll('p:first-child').forEach((p) => {
+    // a lone link ahead of the label is a back link — look past it, but never style it
+    const isBackLink = (el) => el?.tagName === 'P'
+      && el.children.length === 1 && el.firstElementChild.tagName === 'A';
+    const candidate = isBackLink(p) ? p.nextElementSibling : p;
+    if (candidate?.tagName !== 'P' || isBackLink(candidate)) return;
+    if (!candidate.nextElementSibling?.matches('h1, h2, h3')) return;
+    candidate.classList.add('eyebrow');
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -151,6 +208,8 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  decorateSectionMetadata(main);
+  decorateEyebrows(main);
   decorateBlocks(main);
   decorateButtons(main);
 }

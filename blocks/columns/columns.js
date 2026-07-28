@@ -1,3 +1,5 @@
+import { createOptimizedPicture } from '../../scripts/aem.js';
+
 export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
@@ -14,5 +16,14 @@ export default function decorate(block) {
         }
       }
     });
+  });
+
+  // a column is a fraction of the container, so the default 2000px source is oversized
+  const width = cols.length > 2 ? '400' : '900';
+  block.querySelectorAll('picture > img').forEach((img) => {
+    img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [
+      { media: '(min-width: 900px)', width },
+      { width: '750' },
+    ]));
   });
 }
