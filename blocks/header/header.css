@@ -12,7 +12,9 @@ header .nav-wrapper {
   width: 100%;
 }
 
-/* only a handful of short links, so the nav keeps one shape at every width */
+/* only a handful of short links, so the nav keeps one shape at every width.
+   Sections size their max-width as content-box, so the nav adds the gutters to
+   its own max-width to line up with the content below it. */
 header nav {
   box-sizing: border-box;
   display: flex;
@@ -20,9 +22,9 @@ header nav {
   align-items: center;
   gap: 0 24px;
   margin: auto;
-  max-width: var(--content-width);
+  max-width: calc(var(--content-width) + (2 * var(--gutter)));
   min-height: var(--nav-height);
-  padding: 0 24px;
+  padding: 0 var(--gutter);
   font-family: var(--body-font-family);
 }
 
@@ -58,7 +60,12 @@ header nav .nav-brand img {
   height: auto;
 }
 
-/* sections */
+/* sections — pushed to the right edge, so an empty tools slot doesn't
+   leave the links stranded in the middle of the nav */
+header nav .nav-sections {
+  margin-left: auto;
+}
+
 header nav .nav-sections ul {
   display: flex;
   gap: 20px;
@@ -102,6 +109,11 @@ header nav .nav-tools {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+/* an unused tools slot would otherwise leave a flex gap at the right edge */
+header nav .nav-tools:empty {
+  display: none;
 }
 
 @media (width >= 900px) {

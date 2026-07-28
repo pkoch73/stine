@@ -55,8 +55,9 @@
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 17px;
 
-  /* layout */
+  /* layout — the gutter is shared with the header so the two line up */
   --content-width: 1200px;
+  --gutter: 24px;
   --image-radius: 3px;
 
   /* nav height */
@@ -97,8 +98,17 @@
     --heading-font-size-s: 22px;
     --heading-font-size-xs: 18px;
 
+    /* layout */
+    --gutter: 40px;
+
     /* nav height */
     --nav-height: 84px;
+  }
+}
+
+@media (width >= 1200px) {
+  :root {
+    --gutter: 64px;
   }
 }
 
@@ -361,22 +371,12 @@ main > .section {
 main > .section > div {
   max-width: var(--content-width);
   margin: auto;
-  padding: 0 24px;
+  padding: 0 var(--gutter);
 }
 
 @media (width >= 900px) {
   main > .section {
     padding: 64px 0;
-  }
-
-  main > .section > div {
-    padding: 0 40px;
-  }
-}
-
-@media (width >= 1200px) {
-  main > .section > div {
-    padding: 0 64px;
   }
 }
 
