@@ -1,0 +1,11 @@
+{
+  "url": "http://localhost:8082/source-bundle.html",
+  "finalUrl": "http://localhost:8082/source-bundle.html",
+  "rawBytes": 243901,
+  "renderedBytes": 793816,
+  "resourcesCaptured": 1,
+  "blobsResolved": 1,
+  "blobsFailed": 0,
+  "unresolvedBlobRefs": 0,
+  "bundleSuspected": false
+}

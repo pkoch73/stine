@@ -1,0 +1,40 @@
+/* Footer — copyright + location, side by side */
+footer {
+  background-color: var(--color-bg);
+}
+
+footer .footer > div {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0;
+}
+
+footer .footer .section {
+  padding: 0;
+}
+
+footer .footer .default-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 34px 64px;
+  border-top: 1px solid var(--color-border);
+  font-size: var(--body-font-size-xs);
+  color: var(--color-footer-text);
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+footer .footer p {
+  margin: 0;
+  line-height: 1;
+}
+
+@media (width < 600px) {
+  footer .footer .default-content-wrapper {
+    padding: 24px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}

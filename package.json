@@ -1,0 +1,18 @@
+{
+  "name": "@adobe/aem-boilerplate",
+  "private": true,
+  "version": "1.3.0",
+  "description": "Starter project for Adobe Helix",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adobe/aem-boilerplate.git"
+  },
+  "author": "Adobe",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/adobe/aem-boilerplate/issues"
+  },
+  "homepage": "https://github.com/adobe/aem-boilerplate#readme",
+  "devDependencies": {}
+}

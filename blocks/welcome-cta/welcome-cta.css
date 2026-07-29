@@ -1,0 +1,76 @@
+main .welcome-cta {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 32px;
+  border-radius: 24px;
+  background: linear-gradient(90deg, var(--indigo-900), var(--indigo-1100));
+  box-shadow: 0 40px 80px rgb(99 56 238 / 10%);
+  color: #fff;
+  overflow: hidden;
+}
+
+main .welcome-cta .cta-content {
+  position: relative;
+  max-width: 660px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+main .welcome-cta .cta-content h2 {
+  margin: 0;
+  color: #fff;
+  font-size: var(--heading-font-size-xl);
+  font-weight: 800;
+  line-height: 1.16;
+}
+
+main .welcome-cta .cta-content p {
+  margin: 0;
+  max-width: 620px;
+  color: #fff;
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+}
+
+main .welcome-cta .cta-content .button-wrapper {
+  margin: 0;
+}
+
+/* light button on the indigo band */
+main .welcome-cta .cta-content a.button.primary {
+  border-color: transparent;
+  background-color: rgb(255 255 255 / 94%);
+  color: #000;
+}
+
+main .welcome-cta .cta-content a.button.primary:hover,
+main .welcome-cta .cta-content a.button.primary:focus-visible {
+  border-color: transparent;
+  background-color: #fff;
+  color: #000;
+}
+
+@media (width >= 900px) {
+  main .welcome-cta {
+    padding: 80px 40px;
+  }
+}
+
+/* scroll-reveal entrance (applied once JS opts in) */
+@media (prefers-reduced-motion: no-preference) {
+  main .cta.cta-animated {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+    transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  main .cta.cta-animated.cta-revealed {
+    opacity: 1;
+    transform: none;
+  }
+}

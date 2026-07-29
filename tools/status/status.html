@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preparing your page…</title>
+<link rel="stylesheet" href="status.css">
+</head>
+<body data-act="1">
+
+<!-- ============ HUD (static status, no notification capability) ============ -->
+<header class="hud" role="banner">
+  <div class="hud-route">
+    <svg class="hud-wordmark" viewBox="0 0 67 16" height="15" role="img" aria-label="Adobe"><path id="Vector" d="M6.50596 0.460947H11.0612L17.4945 15.7644H12.6799L8.61236 5.60307L5.92489 12.2714H9.1208L10.3971 15.7644H0L6.50596 0.460947ZM22.8591 3.63636C23.326 3.63636 23.8344 3.67734 24.3429 3.80026V0.0102425H28.3689V15.0883C27.4454 15.4981 25.4532 16 23.4609 16C19.8499 16 16.7474 13.9718 16.7474 9.92574C16.7474 5.87964 19.7358 3.64661 22.8591 3.64661V3.63636ZM23.3675 12.7222C23.7411 12.7222 24.042 12.6504 24.3429 12.5583V7.0064C24.042 6.89373 23.7411 6.84251 23.3468 6.84251C22.029 6.84251 20.8046 7.80538 20.8046 9.83355C20.8046 11.8617 22.0497 12.7119 23.3675 12.7119V12.7222ZM35.539 3.63636C38.8905 3.63636 41.744 5.8694 41.744 9.80282C41.744 13.7362 38.9009 15.9693 35.539 15.9693C32.177 15.9693 29.3132 13.7362 29.3132 9.80282C29.3132 5.8694 32.1355 3.63636 35.539 3.63636ZM35.539 12.6607C36.6907 12.6607 37.7595 11.749 37.7595 9.80282C37.7595 7.85659 36.6907 6.94494 35.539 6.94494C34.3872 6.94494 33.3392 7.85659 33.3392 9.80282C33.3392 11.749 34.3353 12.6607 35.539 12.6607ZM42.709 0.0102425H46.7558V3.80026C47.2435 3.70807 47.7519 3.63636 48.2603 3.63636C51.4044 3.63636 54.3201 5.66453 54.3201 9.63893C54.3201 13.8387 51.2176 15.9693 47.5444 15.9693C45.9672 15.9693 43.9542 15.6517 42.709 15.0781V0V0.0102425ZM47.6378 12.7017C49.0282 12.7017 50.2941 11.7183 50.2941 9.69014C50.2941 7.79513 49.0489 6.90397 47.7 6.90397C47.3265 6.90397 47.0256 6.94494 46.7558 7.06786V12.548C46.9841 12.6402 47.285 12.7119 47.6378 12.7119V12.7017ZM61.1893 3.63636C64.2191 3.63636 67 5.55186 67 9.41357C67 9.93598 66.9793 10.4379 66.9066 10.9398H59.363C59.7781 12.2919 60.9817 12.927 62.4863 12.927C63.7107 12.927 64.8417 12.63 66.118 12.0871V15.1293C64.9351 15.7234 63.5239 15.9693 62.0712 15.9693C58.232 15.9693 55.2436 13.685 55.2436 9.80282C55.2436 5.92061 57.9518 3.63636 61.1893 3.63636ZM63.223 8.45071C63.0155 7.14981 62.1335 6.6274 61.2308 6.6274C60.328 6.6274 59.5913 7.18054 59.2904 8.45071H63.223Z" fill="var(--fill-0, black)"/></svg>
+    <span class="hud-divider" aria-hidden="true"></span>
+    <span class="hud-from">Claude Design</span>
+    <span class="hud-arrow" aria-hidden="true">
+      <svg viewBox="0 0 64 12" width="64" height="12"><line x1="0" y1="6" x2="58" y2="6" class="route-line"/><path d="M52 1l6 5-6 5" fill="none" class="route-head"/></svg>
+    </span>
+    <span class="hud-to">Adobe Experience Manager</span>
+  </div>
+  <div class="hud-status">
+    <div class="hud-stage"><span class="hud-stage-dot" aria-hidden="true"></span><span>Preparing your page…</span></div>
+    <span class="hud-hint">Your page will open here when it's ready</span>
+  </div>
+</header>
+
+<!-- ============ ACT 1 — A SAFE, PRIVATE SPACE ============ -->
+<section class="act act-1" id="act1" aria-label="Your private space, separate from your company">
+  <div class="narration">
+    <p class="narr-line" id="narr-1"><span>We're sending your design to <em>Adobe Experience Manager</em>. In the meantime, here's what's happening.</span></p>
+    <p class="narr-line" id="narr-2"><span>Your page is being built in a temporary environment, created just for you.</span></p>
+    <p class="narr-line" id="narr-2b"><span>Already use Experience Manager? <em>None of your existing environments are involved here.</em></span></p>
+  </div>
+
+  <div class="iso" id="iso">
+    <div class="iso-capsule">
+      <div class="capsule-head">
+        <p class="capsule-title">Your temporary environment</p>
+        <p class="capsule-tagline">Private. Isolated. Yours.</p>
+      </div>
+      <div class="capsule-inner">
+        <div class="capsule-page">
+          <span class="gp-mini-h"><i></i><u></u></span>
+          <span class="gp-mini-hero"><b></b><b class="short"></b><em></em></span>
+          <span class="gp-mini-cards"><i></i><i></i><i></i></span>
+        </div>
+      </div>
+      <ul class="capsule-facts">
+        <li id="fact-1">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="15.5" r="1.3" fill="currentColor"/></svg>
+          Only you can open it
+        </li>
+        <li id="fact-2">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Temporary and disposable
+        </li>
+        <li id="fact-3">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3 10h18M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M8 14h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          Kept for 10 days
+        </li>
+      </ul>
+    </div>
+
+    <div class="iso-gap" aria-hidden="true">
+      <span class="iso-node"></span>
+      <span class="iso-dash"></span>
+      <span class="iso-cut">no connection</span>
+      <span class="iso-dash"></span>
+      <span class="iso-node"></span>
+    </div>
+
+    <div class="iso-company">
+      <span class="iso-company-icon">
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M4 21V5l8-3 8 3v16M9 9h.01M15 9h.01M9 13h.01M15 13h.01M10 21v-4h4v4M2 21h20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <b>Your existing environments</b>
+      <span class="iso-company-sub">If you already use Experience Manager</span>
+      <span class="iso-ok">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M8 12.5l2.6 2.6L16 9.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Not involved
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACT 2 — WHAT YOU CAN DO WHEN IT'S READY ============ -->
+<section class="act act-2" id="act2" aria-label="What you can do when your page is ready">
+  <div class="cap-head">
+    <p class="cap-eyebrow">While you wait</p>
+    <h2 class="cap-title">When it opens, this space is yours.</h2>
+    <p class="cap-sub">Everything below happens inside your private space, until you decide otherwise.</p>
+  </div>
+
+  <ol class="cap-path">
+    <li class="cap-step" id="cap-1">
+      <span class="cap-num" aria-hidden="true">1</span>
+      <span class="cap-icon"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M17 3l4 4L8 20l-5 1 1-5L17 3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <b>Author your page</b>
+      <p>Open your page in Experience Manager and edit it directly: text, images, whole sections. No code, no setup.</p>
+    </li>
+    <li class="cap-step" id="cap-2">
+      <span class="cap-num" aria-hidden="true">2</span>
+      <span class="cap-icon"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></span>
+      <b>Preview and publish</b>
+      <p>See your page live on a real URL. It stays within your space; publish and unpublish freely.</p>
+    </li>
+    <li class="cap-step" id="cap-3">
+      <span class="cap-num" aria-hidden="true">3</span>
+      <span class="cap-icon"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 12h13M12 5l7 7-7 7M21 4v16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <b>Transfer it when ready</b>
+      <p>If you like what you see, move it, code and content, into your own Experience Manager and continue there.</p>
+    </li>
+  </ol>
+
+  <p class="cap-note" id="cap-note">No rush. Your space stays available for <b>10 days</b>.</p>
+</section>
+
+<!-- ============ ACT 3 — WHY THE WAIT ============ -->
+<section class="act act-3" id="act3" aria-label="Why this takes a moment">
+  <div class="narration">
+    <p class="narr-line" id="narr-3"><span>So why the wait? We're making your design <em>editable and reusable</em>.</span></p>
+  </div>
+
+  <div class="stage-wrap">
+    <div class="stage" id="stage">
+      <div class="page3d" id="page3d">
+        <div class="layer" data-block="Header" style="--i:0">
+          <div class="gp gp-header"><span class="gp-logo"></span><span class="gp-navlinks"><i></i><i></i><i></i><i></i></span><span class="gp-chip"></span></div>
+        </div>
+        <div class="layer" data-block="Hero" style="--i:1">
+          <div class="gp gp-hero"><span class="gp-bar gp-bar-lg"></span><span class="gp-bar gp-bar-md"></span><span class="gp-line gp-line-w"></span><span class="gp-ctas"><i class="gp-btn-solid"></i><i class="gp-btn-ghost"></i></span></div>
+        </div>
+        <div class="layer" data-block="Columns" style="--i:2">
+          <div class="gp gp-columns"><span><i></i><b></b></span><span><i></i><b></b></span><span><i></i><b></b></span><span><i></i><b></b></span></div>
+        </div>
+        <div class="layer" data-block="Cards" style="--i:3">
+          <div class="gp gp-cards"><span><i></i><b></b><u></u></span><span><i></i><b></b><u></u></span><span><i></i><b></b><u></u></span></div>
+        </div>
+        <div class="layer" data-block="Text" style="--i:4">
+          <div class="gp gp-textsec"><span class="gp-bar gp-bar-sm"></span><span class="gp-line"></span><span class="gp-line"></span><span class="gp-line gp-line-short"></span></div>
+        </div>
+        <div class="layer" data-block="Banner" style="--i:5">
+          <div class="gp gp-bannersec"><span class="gp-bar gp-bar-md gp-onaccent"></span><i class="gp-btn-dark"></i></div>
+        </div>
+        <div class="layer" data-block="Footer" style="--i:6">
+          <div class="gp gp-footer"><span class="gp-logo gp-logo-light"></span><span class="gp-navlinks gp-navlinks-light"><i></i><i></i><i></i></span></div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="rail" id="rail" aria-label="Block mapping">
+      <h2 class="rail-title">Pages are made of blocks</h2>
+      <p class="rail-sub">Experience Manager turns each section of a design into a block you edit like a document. Blocks can be reused on any new page.</p>
+      <ol class="rail-list" id="rail-list"></ol>
+      <p class="rail-note" id="rail-note">Change copy, swap images, reorder sections, or build new pages from the same blocks. The design stays intact.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ ACT 4 — WHAT YOU CAN DO IN AEM ============ -->
+<section class="act act-4" id="act4" aria-label="What you can do in Adobe Experience Manager">
+  <div class="tour-head">
+    <p class="tour-kicker">Almost there</p>
+    <h2 class="tour-title">What you can do in Adobe Experience Manager.</h2>
+  </div>
+
+  <nav class="chapters" id="chapters" aria-label="Tour chapters">
+    <button class="chap" data-chap="0" type="button"><i></i>The canvas</button>
+    <button class="chap" data-chap="1" type="button"><i></i>Edit text</button>
+    <button class="chap" data-chap="2" type="button"><i></i>Edit images</button>
+    <button class="chap" data-chap="3" type="button"><i></i>Chat</button>
+    <button class="chap" data-chap="4" type="button"><i></i>Preview &amp; publish</button>
+    <button class="chap" data-chap="5" type="button"><i></i>Sidekick <s>optional</s></button>
+  </nav>
+
+  <div class="tour-stage">
+    <article class="panel" data-panel="0">
+      <div class="panel-demo demo-canvas">
+        <div class="mini-toolbar"><span class="seg"><i class="seg-on">Layout</i><i>Content</i><i>Split</i></span></div>
+        <div class="mini-canvas"><div class="mini-page"></div><div class="mini-outline"></div></div>
+      </div>
+      <div class="panel-copy">
+        <h3>One canvas, three views</h3>
+        <p>Your page renders exactly as visitors will see it. Switch between <b>Layout</b> for the visual page, <b>Content</b> for the words alone, or <b>Split</b> for both side by side.</p>
+      </div>
+    </article>
+
+    <article class="panel" data-panel="1">
+      <div class="panel-demo demo-edit">
+        <div class="mini-hero"><span class="mini-headline">EVERY WORD IS <em>EDITABLE.</em></span></div>
+        <div class="mini-rte"><span class="rte-p">Paragraph ⌄</span><b>B</b><i>I</i><u>U</u><span>≣</span><span>⛓</span></div>
+      </div>
+      <div class="panel-copy">
+        <h3>Click any text. Just type.</h3>
+        <p>Everything on the page is directly editable, headlines, dates, prices. A formatting toolbar follows your selection. Undo is always one step away.</p>
+      </div>
+    </article>
+
+    <article class="panel" data-panel="2">
+      <div class="panel-demo demo-images">
+        <div class="img-section">
+          <div class="img-copy"><span></span><span></span><span class="short"></span></div>
+          <div class="img-slot">
+            <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="9" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M21 15l-5-5L5 21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Drop an image, or browse</span>
+          </div>
+        </div>
+        <div class="img-chip">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7M21 3v5h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Replace image
+        </div>
+      </div>
+      <div class="panel-copy">
+        <h3>Add and swap images</h3>
+        <p>Every image on the page is a slot. Drop a file on it, browse your assets, or replace what's there. The layout adapts; the design holds.</p>
+      </div>
+    </article>
+
+    <article class="panel" data-panel="3">
+      <div class="panel-demo demo-agent">
+        <div class="mini-chat">
+          <span class="mini-prompt">Make this headline more engaging</span>
+          <span class="mini-tool">› content_update</span>
+          <div class="mini-approve">
+            <b>content_update</b>
+            <p>Update hero headline for a more dynamic feel.</p>
+            <span class="ap-row"><i>Reject</i><i>Always approve</i><i class="ap-go">Approve ↵</i></span>
+          </div>
+        </div>
+      </div>
+      <div class="panel-copy">
+        <h3>Agents that do the work</h3>
+        <p>Ask in plain language. An agent reads your page, proposes the change, and waits for your approval before touching anything. You stay in charge.</p>
+      </div>
+    </article>
+
+    <article class="panel" data-panel="4">
+      <div class="panel-demo demo-topbar">
+        <div class="tb-chrome">
+          <span class="tb-logo"><svg viewBox="0 0 17.5 16.23" width="13" height="12" aria-hidden="true"><path d="M6.50596 0.460947H11.0612L17.4945 15.7644H12.6799L8.61236 5.60307L5.92489 12.2714H9.1208L10.3971 15.7644H0L6.50596 0.460947Z" fill="#fff"/></svg></span>
+          <span class="tb-crumb"><i></i><i></i><b></b></span>
+          <span class="tb-actions">
+            <span class="tb-send" id="tb-send">
+              <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="tb-avatar"></span>
+          </span>
+        </div>
+        <div class="tb-menu" id="tb-menu"><span class="tb-item on">Preview</span><span class="tb-item">Publish</span></div>
+        <div class="tb-page"></div>
+      </div>
+      <div class="panel-copy">
+        <h3>Preview, then publish</h3>
+        <p>The send button at the top right of the editor does both: <b>Preview</b> shows the real page on a private URL, <b>Publish</b> makes it live in your space, in seconds. You can unpublish at any time.</p>
+      </div>
+    </article>
+
+    <article class="panel" data-panel="5">
+      <div class="panel-demo demo-publish">
+        <div class="mini-sitepage"></div>
+        <div class="sidekick">
+          <span class="sk-logo"><svg viewBox="0 0 17.5 16.23" width="13" height="12" aria-hidden="true"><path d="M6.50596 0.460947H11.0612L17.4945 15.7644H12.6799L8.61236 5.60307L5.92489 12.2714H9.1208L10.3971 15.7644H0L6.50596 0.460947Z" fill="#eb1000"/></svg></span>
+          <span class="sk-env" id="sk-env">Preview ⌄</span>
+          <span class="sk-item">Edit</span><span class="sk-item">Update</span><span class="sk-item">Publish</span>
+        </div>
+      </div>
+      <div class="panel-copy">
+        <h3>Optional: the Sidekick</h3>
+        <p>A browser extension (Chrome, Edge, Comet, and other browsers) that rides along on your pages outside the editor, so you can jump back to editing or publish straight from the page you're looking at.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ ACT 5 — QUIET CLOSE ============ -->
+<section class="act act-5" id="act5" aria-label="Your page will open when ready">
+  <div class="close-wrap">
+    <div class="close-status" role="status">
+      <span class="close-spinner" aria-hidden="true"></span>
+      <span id="close-status-text">Still preparing your page</span>
+      <span class="close-ellipsis" aria-hidden="true"><i>.</i><i>.</i><i>.</i></span>
+    </div>
+    <h2 class="close-title">Your page is on its way.</h2>
+    <p class="close-sub">This page becomes your editor the moment it's ready. <br>If you close the tab, the link in your Claude Design chat brings you right back.</p>
+    <div class="close-bar" aria-hidden="true"></div>
+    <button class="close-cta" id="demo-cta" type="button">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+      Try AEM on a demo page
+    </button>
+  </div>
+</section>
+
+<nav class="story-nav" aria-label="Story sections">
+  <button class="snav-arrow" id="snav-prev" type="button" aria-label="Previous section">
+    <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="snav-dots" id="snav-dots">
+    <button type="button" data-go="1" aria-label="Your private space"></button>
+    <button type="button" data-go="2" aria-label="What you can do"></button>
+    <button type="button" data-go="3" aria-label="Why the wait"></button>
+    <button type="button" data-go="4" aria-label="What you can do in Adobe Experience Manager"></button>
+    <button type="button" data-go="5" aria-label="While you wait"></button>
+  </div>
+  <button class="snav-arrow" id="snav-next" type="button" aria-label="Next section">
+    <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</nav>
+
+<script src="status.js"></script>
+</body>
+</html>
