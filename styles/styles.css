@@ -1,0 +1,258 @@
+/*
+ * Brand styles for STINE — a personal making archive.
+ * Fonts: Archivo (display/headings), Hanken Grotesk (body).
+ * Both are SIL OFL 1.1 licensed (Google Fonts).
+ */
+
+/* --- Font faces ---------------------------------------------------------- */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/styles/fonts/hanken-grotesk-variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/styles/fonts/archivo-variable.woff2') format('woff2');
+}
+
+/* Metric-matched system-font override so the swap from Arial -> Hanken Grotesk
+   causes zero CLS. Values computed from the woff2 via fontTools. */
+@font-face {
+  font-family: 'Arial';
+  src: local('Arial');
+  size-adjust: 123.47%;
+  ascent-override: 80.99%;
+  descent-override: 24.54%;
+  line-gap-override: 0%;
+}
+
+/* --- Brand tokens -------------------------------------------------------- */
+:root {
+  /* colors */
+  --color-bg: #fbfbf9;
+  --color-ink: #1b1e1c;
+  --color-ink-muted: #44483f;
+  --color-ink-secondary: #5c615c;
+  --color-accent: #3e5c6b;
+  --color-border: #e4e5e1;
+  --color-footer-text: #9a9e97;
+
+  /* fonts */
+  --font-body: 'Hanken Grotesk', arial, sans-serif;
+  --font-display: 'Archivo', arial, sans-serif;
+
+  /* layout */
+  --maxw: 1200px;
+  --nav-height: 80px;
+
+  /* type scale */
+  --body-font-size-m: 17px;
+  --body-font-size-s: 15px;
+  --body-font-size-xs: 13px;
+
+  --heading-font-size-xxl: 46px;
+  --heading-font-size-xl: 22px;
+  --heading-font-size-l: 22px;
+  --heading-font-size-m: 18px;
+  --heading-font-size-s: 15px;
+}
+
+/* --- Reset --------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  display: none;
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+}
+
+body.appear {
+  display: block;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+/* --- Typography ---------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--heading-font-size-xxl);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+}
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+}
+
+/* --- Links --------------------------------------------------------------- */
+a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Buttons (EDS convention) -------------------------------------------- */
+p.button-wrapper {
+  margin: 12px 0;
+}
+
+a.button:any-link,
+button.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+a.button.primary:any-link,
+button.button.primary {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-bg);
+}
+
+a.button.primary:hover,
+button.button.primary:hover {
+  background: var(--color-ink-muted);
+  border-color: var(--color-ink-muted);
+}
+
+a.button.secondary:any-link,
+button.button.secondary {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-ink);
+}
+
+a.button.secondary:hover,
+button.button.secondary:hover {
+  border-color: var(--color-ink);
+}
+
+.button-wrapper {
+  margin: 0;
+}
+
+/* --- Icons --------------------------------------------------------------- */
+.icon {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+}
+
+.icon img {
+  height: 100%;
+  width: 100%;
+}
+
+/* --- Header height reservation ------------------------------------------- */
+header {
+  min-height: var(--nav-height);
+  background: var(--color-bg);
+}
+
+header .header,
+footer .footer {
+  visibility: hidden;
+}
+
+header .header[data-block-status="loaded"],
+footer .footer[data-block-status="loaded"] {
+  visibility: visible;
+}
+
+/* --- EDS section scaffold ------------------------------------------------ */
+main > .section {
+  margin: 0;
+  padding: 0;
+}
+
+main > .section > div {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+@media (width < 600px) {
+  main > .section > div {
+    padding: 0 24px;
+  }
+}

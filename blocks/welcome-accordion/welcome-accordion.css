@@ -1,0 +1,65 @@
+main .welcome-accordion {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+main .welcome-accordion .accordion-item {
+  border-bottom: 1px solid var(--indigo-300);
+}
+
+main .welcome-accordion .accordion-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 25px 16px;
+  cursor: pointer;
+  list-style: none;
+  color: var(--body-text-color);
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+}
+
+main .welcome-accordion .accordion-q::-webkit-details-marker {
+  display: none;
+}
+
+main .welcome-accordion .accordion-chevron {
+  flex-shrink: 0;
+  display: inline-flex;
+  color: var(--text-color);
+  transition: transform 0.25s ease;
+}
+
+main .welcome-accordion .accordion-item[open] .accordion-chevron {
+  transform: rotate(180deg);
+}
+
+/* animate open/close by collapsing the panel's grid row */
+main .welcome-accordion .accordion-a {
+  display: grid;
+  grid-template-rows: 0fr;
+}
+
+main .welcome-accordion .accordion-item[open] .accordion-a {
+  grid-template-rows: 1fr;
+}
+
+main .welcome-accordion .accordion-a-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+main .welcome-accordion .accordion-a-inner p {
+  margin: 0;
+  padding: 0 16px 25px;
+  color: var(--dark-color);
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  main .welcome-accordion .accordion-a {
+    transition: grid-template-rows 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+}

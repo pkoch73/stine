@@ -1,0 +1,11 @@
+{
+  "url": "http://localhost:8082/source-bundle.html",
+  "status": 200,
+  "headers": {
+    "content-length": "243901",
+    "content-type": "text/html",
+    "date": "Mon, 27 Jul 2026 14:02:45 GMT",
+    "last-modified": "Mon, 27 Jul 2026 14:02:40 GMT",
+    "server": "SimpleHTTP/0.6 Python/3.11.2"
+  }
+}

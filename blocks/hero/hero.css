@@ -1,0 +1,42 @@
+/* Hero — eyebrow + headline + description */
+.hero .hero-wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 64px 64px 48px;
+}
+
+.hero .hero-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--heading-font-size-xxl);
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+  line-height: 1.15;
+}
+
+.hero .hero-description {
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  color: var(--color-ink-muted);
+  max-width: 600px;
+  margin: 0;
+}
+
+@media (width < 600px) {
+  .hero .hero-wrap {
+    padding: 40px 24px 32px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}
